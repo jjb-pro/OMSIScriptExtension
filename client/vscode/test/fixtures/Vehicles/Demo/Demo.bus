@@ -1,0 +1,19 @@
+[friendlyname]
+Demo bus
+
+[varnamelist]
+1
+script\vars.txt
+
+[stringvarnamelist]
+1
+script\stringvars.txt
+
+[script]
+2
+script\main.osc
+script\lib.osc
+
+[constfile]
+1
+script\const.txt

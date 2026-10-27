@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "node esbuild.mjs",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "typecheck",
+            "type": "npm",
+            "script": "typecheck",
+            "problemMatcher": "$tsc"
+        }
+    ]
+}

@@ -1,0 +1,173 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*.*.*"]
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish to the Visual Studio Marketplace and Open VSX
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    name: Verify version
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: version
+        name: Read and compare versions
+        shell: bash
+        run: |
+          package=$(node -p "require('./client/vscode/package.json').version")
+          props=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' Directory.Build.props)
+          if [ "$package" != "$props" ]; then
+            echo "::error::package.json ($package) and Directory.Build.props ($props) disagree"; exit 1
+          fi
+          if [ "${GITHUB_REF_TYPE}" = "tag" ] && [ "${GITHUB_REF_NAME}" != "v$package" ]; then
+            echo "::error::Tag ${GITHUB_REF_NAME} does not match version $package"; exit 1
+          fi
+          grep -q "^## $package" client/vscode/CHANGELOG.md || { echo "::error::CHANGELOG.md has no section for $package"; exit 1; }
+          echo "version=$package" >> "$GITHUB_OUTPUT"
+
+  test:
+    name: Test
+    needs: verify
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - run: dotnet test OMSIScript.slnx -c Release
+
+  server:
+    name: Server ${{ matrix.rid }}
+    needs: verify
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - { rid: win-x64, os: windows-latest }
+          - { rid: win-arm64, os: windows-latest }
+          - { rid: linux-x64, os: ubuntu-22.04 }
+          - { rid: linux-arm64, os: ubuntu-22.04-arm }
+          - { rid: osx-x64, os: macos-14 }
+          - { rid: osx-arm64, os: macos-14 }
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Install native toolchain
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y clang zlib1g-dev
+
+      - name: Publish
+        run: dotnet publish src/OMSIScript.LanguageServer -c Release -r ${{ matrix.rid }} -o out/${{ matrix.rid }} -p:DebugType=none -p:DebugSymbols=false
+
+      - name: Smoke test
+        if: matrix.rid == 'win-x64' || matrix.rid == 'linux-x64' || matrix.rid == 'linux-arm64' || matrix.rid == 'osx-arm64'
+        shell: bash
+        run: out/${{ matrix.rid }}/omsi-script-language-server --version
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: server-${{ matrix.rid }}
+          path: |
+            out/${{ matrix.rid }}/omsi-script-language-server
+            out/${{ matrix.rid }}/omsi-script-language-server.exe
+          if-no-files-found: error
+
+  package:
+    name: Package ${{ matrix.target }}
+    needs: [verify, test, server]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - { rid: win-x64, target: win32-x64 }
+          - { rid: win-arm64, target: win32-arm64 }
+          - { rid: linux-x64, target: linux-x64 }
+          - { rid: linux-arm64, target: linux-arm64 }
+          - { rid: osx-x64, target: darwin-x64 }
+          - { rid: osx-arm64, target: darwin-arm64 }
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: client/vscode/package-lock.json
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: server-${{ matrix.rid }}
+          path: client/vscode/server
+
+      - name: Package
+        working-directory: client/vscode
+        run: |
+          chmod +x server/omsi-script-language-server* || true
+          npm ci
+          npx vsce package --target ${{ matrix.target }} -o osc-ext-${{ matrix.target }}-${{ needs.verify.outputs.version }}.vsix
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vsix-${{ matrix.target }}
+          path: client/vscode/*.vsix
+          if-no-files-found: error
+
+  release:
+    name: GitHub release
+    needs: [verify, package]
+    runs-on: ubuntu-latest
+    env:
+      VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      OVSX_PAT: ${{ secrets.OVSX_PAT }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: vsix-*
+          path: dist
+          merge-multiple: true
+
+      - name: Extract release notes
+        shell: bash
+        run: |
+          awk -v version="## ${{ needs.verify.outputs.version }}" '
+            $0 == version { found = 1; next }
+            found && /^## / { exit }
+            found { print }
+          ' client/vscode/CHANGELOG.md > notes.md
+
+      - uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
+        with:
+          name: v${{ needs.verify.outputs.version }}
+          body_path: notes.md
+          files: dist/*.vsix
+
+      - name: Publish to the Visual Studio Marketplace
+        if: (github.ref_type == 'tag' || inputs.publish) && env.VSCE_PAT != ''
+        run: npx --yes @vscode/vsce publish --packagePath dist/*.vsix
+
+      - name: Publish to Open VSX
+        if: (github.ref_type == 'tag' || inputs.publish) && env.OVSX_PAT != ''
+        run: |
+          for file in dist/*.vsix; do
+            npx --yes ovsx publish "$file" -p "$OVSX_PAT"
+          done

@@ -1,0 +1,17 @@
+STNewTex
+STLock
+STUnlock
+STFilter
+STSetColor
+STDrawPixel
+STDrawRect
+STTextOut
+GetFontIndex
+TextLength
+STReadPixel
+STCopyColor
+STLoadTex
+STGetR
+STGetG
+STGetB
+STGetA

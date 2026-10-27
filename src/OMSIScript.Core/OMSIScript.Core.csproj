@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <RootNamespace>OMSIScript</RootNamespace>
+        <IsAotCompatible>true</IsAotCompatible>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Resources\Game\*.txt" LogicalName="OMSIScript.Game.%(Filename).txt" />
+        <EmbeddedResource Update="Resources\Documentation.resx" LogicalName="OMSIScript.Resources.Documentation.resources" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="OMSIScript.Core.Tests" />
+    </ItemGroup>
+
+</Project>

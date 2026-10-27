@@ -1,0 +1,9 @@
+NightlightA
+InUse
+TrafficLightPhase
+TrafficLightApproach
+Colorscheme
+Signal
+NextSignal
+Refresh_Strings
+Switch

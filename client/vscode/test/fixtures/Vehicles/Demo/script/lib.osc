@@ -1,0 +1,6 @@
+' Demo library
+{macro:lib_frame}
+	(C.L.speed) (L.S.Timegap) * (S.L.speed_var)
+	(L.L.speed_var) (F.L.lamp_curve) (S.L.lamp)
+	"Speed" (S.$.display)
+{end}

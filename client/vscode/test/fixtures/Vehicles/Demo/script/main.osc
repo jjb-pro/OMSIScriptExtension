@@ -1,0 +1,9 @@
+' Demo main script
+{init}
+	0 (S.L.lamp)
+{end}
+
+{frame}
+	(M.L.lib_frame)
+	(L.L.unknown_var) (S.L.lamp)
+{end}

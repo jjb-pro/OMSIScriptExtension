@@ -1,0 +1,179 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "OMSI Script",
+    "scopeName": "source.osc",
+    "patterns": [
+        { "include": "#comment" },
+        { "include": "#misplaced-comment" },
+        { "include": "#string" },
+        { "include": "#blocks" },
+        { "include": "#conditions" },
+        { "include": "#access" },
+        { "include": "#registers" },
+        { "include": "#string-operators" },
+        { "include": "#functions" },
+        { "include": "#operators" },
+        { "include": "#numbers" }
+    ],
+    "repository": {
+        "comment": {
+            "name": "comment.line.apostrophe.osc",
+            "match": "^'.*$"
+        },
+        "misplaced-comment": {
+            "name": "invalid.illegal.misplaced-comment.osc",
+            "match": "(?<=[ \\t])'.*$"
+        },
+        "string": {
+            "name": "string.quoted.double.osc",
+            "begin": "(?:^|(?<=[ \\t]))\"",
+            "end": "\"",
+            "beginCaptures": { "0": { "name": "punctuation.definition.string.begin.osc" } },
+            "endCaptures": { "0": { "name": "punctuation.definition.string.end.osc" } }
+        },
+        "blocks": {
+            "patterns": [
+                {
+                    "match": "(?:^|(?<=[ \\t]))\\{(?:init|frame|frame_ai|end)\\}(?=[ \\t]|$)",
+                    "name": "keyword.other.block.osc"
+                },
+                {
+                    "match": "(?:^|(?<=[ \\t]))(\\{macro:)([^}\\s]*)(\\})(?=[ \\t]|$)",
+                    "captures": {
+                        "1": { "name": "keyword.other.block.macro.osc" },
+                        "2": { "name": "entity.name.function.macro.osc" },
+                        "3": { "name": "keyword.other.block.macro.osc" }
+                    }
+                },
+                {
+                    "match": "(?:^|(?<=[ \\t]))(\\{trigger:)([^}\\s]*)(\\})(?=[ \\t]|$)",
+                    "captures": {
+                        "1": { "name": "keyword.other.block.trigger.osc" },
+                        "2": { "name": "entity.name.function.trigger.osc" },
+                        "3": { "name": "keyword.other.block.trigger.osc" }
+                    }
+                }
+            ]
+        },
+        "conditions": {
+            "match": "(?:^|(?<=[ \\t]))\\{(if|else|endif)\\}(?=[ \\t]|$)",
+            "name": "keyword.control.conditional.osc"
+        },
+        "access": {
+            "patterns": [
+                {
+                    "match": "(?:^|(?<=[ \\t]))(\\()([LS])(\\.)(L)(\\.)([^)\\s]*)(\\))(?=[ \\t]|$)",
+                    "captures": {
+                        "1": { "name": "punctuation.section.parens.begin.osc" },
+                        "2": { "name": "keyword.other.access.osc" },
+                        "4": { "name": "keyword.other.access.osc" },
+                        "6": { "name": "variable.other.readwrite.osc" },
+                        "7": { "name": "punctuation.section.parens.end.osc" }
+                    }
+                },
+                {
+                    "match": "(?:^|(?<=[ \\t]))(\\()([LS])(\\.)(\\$)(\\.)([^)\\s]*)(\\))(?=[ \\t]|$)",
+                    "captures": {
+                        "1": { "name": "punctuation.section.parens.begin.osc" },
+                        "2": { "name": "keyword.other.access.osc" },
+                        "4": { "name": "keyword.other.access.osc" },
+                        "6": { "name": "variable.other.string.osc" },
+                        "7": { "name": "punctuation.section.parens.end.osc" }
+                    }
+                },
+                {
+                    "match": "(?:^|(?<=[ \\t]))(\\()([LS])(\\.)(.)(\\.)([^)\\s]*)(\\))(?=[ \\t]|$)",
+                    "captures": {
+                        "1": { "name": "punctuation.section.parens.begin.osc" },
+                        "2": { "name": "keyword.other.access.osc" },
+                        "4": { "name": "keyword.other.access.osc" },
+                        "6": { "name": "variable.language.system.osc" },
+                        "7": { "name": "punctuation.section.parens.end.osc" }
+                    }
+                },
+                {
+                    "match": "(?:^|(?<=[ \\t]))(\\()(M)(\\.)(L)(\\.)([^)\\s]*)(\\))(?=[ \\t]|$)",
+                    "captures": {
+                        "1": { "name": "punctuation.section.parens.begin.osc" },
+                        "2": { "name": "keyword.other.access.osc" },
+                        "4": { "name": "keyword.other.access.osc" },
+                        "6": { "name": "entity.name.function.call.osc" },
+                        "7": { "name": "punctuation.section.parens.end.osc" }
+                    }
+                },
+                {
+                    "match": "(?:^|(?<=[ \\t]))(\\()(M)(\\.)(V)(\\.)([^)\\s]*)(\\))(?=[ \\t]|$)",
+                    "captures": {
+                        "1": { "name": "punctuation.section.parens.begin.osc" },
+                        "2": { "name": "keyword.other.access.osc" },
+                        "4": { "name": "keyword.other.access.osc" },
+                        "6": { "name": "support.function.builtin.osc" },
+                        "7": { "name": "punctuation.section.parens.end.osc" }
+                    }
+                },
+                {
+                    "match": "(?:^|(?<=[ \\t]))(\\()(C)(\\.)(.)(\\.)([^)\\s]*)(\\))(?=[ \\t]|$)",
+                    "captures": {
+                        "1": { "name": "punctuation.section.parens.begin.osc" },
+                        "2": { "name": "keyword.other.access.osc" },
+                        "4": { "name": "keyword.other.access.osc" },
+                        "6": { "name": "variable.other.constant.osc" },
+                        "7": { "name": "punctuation.section.parens.end.osc" }
+                    }
+                },
+                {
+                    "match": "(?:^|(?<=[ \\t]))(\\()(F)(\\.)(.)(\\.)([^)\\s]*)(\\))(?=[ \\t]|$)",
+                    "captures": {
+                        "1": { "name": "punctuation.section.parens.begin.osc" },
+                        "2": { "name": "keyword.other.access.osc" },
+                        "4": { "name": "keyword.other.access.osc" },
+                        "6": { "name": "support.function.curve.osc" },
+                        "7": { "name": "punctuation.section.parens.end.osc" }
+                    }
+                },
+                {
+                    "match": "(?:^|(?<=[ \\t]))(\\()(T)(\\.)(.)(\\.)([^)\\s]*)(\\))(?=[ \\t]|$)",
+                    "captures": {
+                        "1": { "name": "punctuation.section.parens.begin.osc" },
+                        "2": { "name": "keyword.other.access.osc" },
+                        "4": { "name": "keyword.other.access.osc" },
+                        "6": { "name": "entity.name.tag.sound-trigger.osc" },
+                        "7": { "name": "punctuation.section.parens.end.osc" }
+                    }
+                }
+            ]
+        },
+        "registers": {
+            "match": "(?:^|(?<=[ \\t]))[ls][0-9](?=[ \\t]|$)",
+            "name": "variable.language.register.osc"
+        },
+        "string-operators": {
+            "match": "(?:^|(?<=[ \\t]))\\$(?:\\+|\\*|d|=|<=|>=|<|>|length|cutBegin|cutEnd|SetLengthR|SetLengthL|SetLengthC|RemoveSpaces|IntToStr|IntToStrEnh|StrToFloat|msg)(?=[ \\t]|$)",
+            "name": "support.function.string.osc"
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "match": "(?:^|(?<=[ \\t]))(?:sin|arcsin|arctan|min|max|exp|sqrt|sqr|sgn|abs|trunc|random|d)(?=[ \\t]|$)",
+                    "name": "support.function.math.osc"
+                },
+                {
+                    "match": "(?:^|(?<=[ \\t]))pi(?=[ \\t]|$)",
+                    "name": "constant.language.pi.osc"
+                },
+                {
+                    "match": "(?:^|(?<=[ \\t]))%stackdump%(?=[ \\t]|$)",
+                    "name": "keyword.other.debug.osc"
+                }
+            ]
+        },
+        "operators": {
+            "match": "(?:^|(?<=[ \\t]))(?:/-/|&&|\\|\\||<=|>=|[-+*/%=<>!])(?=[ \\t]|$)",
+            "name": "keyword.operator.osc"
+        },
+        "numbers": {
+            "match": "(?:^|(?<=[ \\t]))[+-]?(?:\\d+\\.?\\d*|\\.\\d+)(?:[eE][+-]?\\d+)?(?=[ \\t]|$)",
+            "name": "constant.numeric.osc"
+        }
+    }
+}

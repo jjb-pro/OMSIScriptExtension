@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="kw.init" xml:space="preserve">
+    <value>Entry point that runs once when the object is initialized.</value>
+  </data>
+  <data name="kw.frame" xml:space="preserve">
+    <value>Entry point that runs every frame.</value>
+  </data>
+  <data name="kw.frame_ai" xml:space="preserve">
+    <value>Entry point that runs every frame instead of `frame` while the vehicle is controlled by the AI.</value>
+  </data>
+  <data name="kw.end" xml:space="preserve">
+    <value>Ends the current block.</value>
+  </data>
+  <data name="kw.if" xml:space="preserve">
+    <value>Executes the following commands if `Stack0` is not 0. The value stays on the stack.</value>
+  </data>
+  <data name="kw.else" xml:space="preserve">
+    <value>Starts the commands that are executed if `Stack0` was 0.</value>
+  </data>
+  <data name="kw.endif" xml:space="preserve">
+    <value>Ends the condition.</value>
+  </data>
+  <data name="kw.macro" xml:space="preserve">
+    <value>Defines a macro that can be called with `(M.L.name)`.</value>
+  </data>
+  <data name="kw.trigger" xml:space="preserve">
+    <value>Defines a trigger that runs when the event with this name occurs.</value>
+  </data>
+  <data name="trigger.keyboard" xml:space="preserve">
+    <value>Runs when the key bound to `{0}` is pressed. `{0}_off` runs when it is released.</value>
+  </data>
+  <data name="trigger.collision" xml:space="preserve">
+    <value>Runs when the vehicle collides with something. `coll_pos_x`, `coll_pos_y`, `coll_pos_z` and `coll_energy` describe the collision.</value>
+  </data>
+  <data name="trigger.int_haltewunsch" xml:space="preserve">
+    <value>Runs when a passenger requests a stop.</value>
+  </data>
+  <data name="trigger.railbond_#" xml:space="preserve">
+    <value>Runs when axle # passes a rail joint.</value>
+  </data>
+  <data name="trigger.ai_scheduled_settarget" xml:space="preserve">
+    <value>Runs when the line and destination of a scheduled vehicle are set. The line is in `SetLineTo`, the destination index in `AI_target_index`.</value>
+  </data>
+  <data name="trigger.ai_scheduled_setbusstop" xml:space="preserve">
+    <value>Runs when the next stop of a scheduled vehicle changes. The stop name is in `act_busstop`.</value>
+  </data>
+  <data name="trigger.malfunction_gettime" xml:space="preserve">
+    <value>Runs when the player requests a repair. Leave the repair time in minutes in `Stack0`.</value>
+  </data>
+  <data name="trigger.malfunction_reset" xml:space="preserve">
+    <value>Runs when the player accepts a repair.</value>
+  </data>
+  <data name="trigger.veh_tank" xml:space="preserve">
+    <value>Runs every frame while the vehicle is refueled.</value>
+  </data>
+  <data name="access.LL" xml:space="preserve">
+    <value>Pushes the value of the variable onto the float stack.</value>
+  </data>
+  <data name="access.SL" xml:space="preserve">
+    <value>Stores `Stack0` in the variable. The value stays on the stack.</value>
+  </data>
+  <data name="access.L$" xml:space="preserve">
+    <value>Pushes the value of the string variable onto the string stack.</value>
+  </data>
+  <data name="access.S$" xml:space="preserve">
+    <value>Stores `StringStack0` in the string variable. The string stays on the stack.</value>
+  </data>
+  <data name="access.LS" xml:space="preserve">
+    <value>Pushes the value of the system variable onto the float stack.</value>
+  </data>
+  <data name="access.SS" xml:space="preserve">
+    <value>Stores `Stack0` in the system variable. The value stays on the stack.</value>
+  </data>
+  <data name="access.ML" xml:space="preserve">
+    <value>Calls the macro.</value>
+  </data>
+  <data name="access.MV" xml:space="preserve">
+    <value>Calls a system macro.</value>
+  </data>
+  <data name="access.CL" xml:space="preserve">
+    <value>Pushes the value of the constant onto the float stack.</value>
+  </data>
+  <data name="access.FL" xml:space="preserve">
+    <value>Replaces `Stack0` with the value of the curve at `Stack0`.</value>
+  </data>
+  <data name="access.TL" xml:space="preserve">
+    <value>Plays the sounds attached to the sound trigger.</value>
+  </data>
+  <data name="access.TF" xml:space="preserve">
+    <value>Plays the sound file `StringStack0` on the sounds attached to the sound trigger. The string stays on the stack.</value>
+  </data>
+  <data name="reg.load" xml:space="preserve">
+    <value>Pushes the value of register {0} onto the float stack.</value>
+  </data>
+  <data name="reg.store" xml:space="preserve">
+    <value>Stores `Stack0` in register {0}. The value stays on the stack.</value>
+  </data>
+  <data name="literal.number" xml:space="preserve">
+    <value>Pushes the number onto the float stack.</value>
+  </data>
+  <data name="literal.string" xml:space="preserve">
+    <value>Pushes the string onto the string stack.</value>
+  </data>
+  <data name="op.add" xml:space="preserve">
+    <value>Returns `Stack1 + Stack0`.</value>
+  </data>
+  <data name="op.sub" xml:space="preserve">
+    <value>Returns `Stack1 - Stack0`.</value>
+  </data>
+  <data name="op.mul" xml:space="preserve">
+    <value>Returns `Stack1 * Stack0`.</value>
+  </data>
+  <data name="op.div" xml:space="preserve">
+    <value>Returns `Stack1 / Stack0`, or 0 if `Stack0` is 0.</value>
+  </data>
+  <data name="op.mod" xml:space="preserve">
+    <value>Returns the remainder of `Stack1 / Stack0`, or 0 if `Stack0` is 0.</value>
+  </data>
+  <data name="op.neg" xml:space="preserve">
+    <value>Returns `-Stack0`.</value>
+  </data>
+  <data name="op.eq" xml:space="preserve">
+    <value>Returns 1 if `Stack1` equals `Stack0`; otherwise, 0.</value>
+  </data>
+  <data name="op.lt" xml:space="preserve">
+    <value>Returns 1 if `Stack1` is less than `Stack0`; otherwise, 0.</value>
+  </data>
+  <data name="op.gt" xml:space="preserve">
+    <value>Returns 1 if `Stack1` is greater than `Stack0`; otherwise, 0.</value>
+  </data>
+  <data name="op.le" xml:space="preserve">
+    <value>Returns 1 if `Stack1` is less than or equal to `Stack0`; otherwise, 0.</value>
+  </data>
+  <data name="op.ge" xml:space="preserve">
+    <value>Returns 1 if `Stack1` is greater than or equal to `Stack0`; otherwise, 0.</value>
+  </data>
+  <data name="op.and" xml:space="preserve">
+    <value>Returns 1 if both `Stack1` and `Stack0` are not 0; otherwise, 0.</value>
+  </data>
+  <data name="op.or" xml:space="preserve">
+    <value>Returns 1 if `Stack1` or `Stack0` is not 0; otherwise, 0.</value>
+  </data>
+  <data name="op.not" xml:space="preserve">
+    <value>Returns 1 if `Stack0` is 0; otherwise, 0.</value>
+  </data>
+  <data name="op.sin" xml:space="preserve">
+    <value>Returns the sine of `Stack0` (in radians).</value>
+  </data>
+  <data name="op.arcsin" xml:space="preserve">
+    <value>Returns the arc sine of `Stack0` in radians.</value>
+  </data>
+  <data name="op.arctan" xml:space="preserve">
+    <value>Returns the arc tangent of `Stack0` in radians.</value>
+  </data>
+  <data name="op.min" xml:space="preserve">
+    <value>Returns the smaller of `Stack1` and `Stack0`.</value>
+  </data>
+  <data name="op.max" xml:space="preserve">
+    <value>Returns the larger of `Stack1` and `Stack0`.</value>
+  </data>
+  <data name="op.exp" xml:space="preserve">
+    <value>Returns e raised to the power of `Stack0`.</value>
+  </data>
+  <data name="op.sqrt" xml:space="preserve">
+    <value>Returns the square root of `Stack0`.</value>
+  </data>
+  <data name="op.sqr" xml:space="preserve">
+    <value>Returns the square of `Stack0`.</value>
+  </data>
+  <data name="op.sgn" xml:space="preserve">
+    <value>Returns the sign of `Stack0`: -1, 0 or 1.</value>
+  </data>
+  <data name="op.abs" xml:space="preserve">
+    <value>Returns the absolute value of `Stack0`.</value>
+  </data>
+  <data name="op.trunc" xml:space="preserve">
+    <value>Returns the integer part of `Stack0`.</value>
+  </data>
+  <data name="op.random" xml:space="preserve">
+    <value>Returns a random integer from 0 to `Stack0` - 1.</value>
+  </data>
+  <data name="op.pi" xml:space="preserve">
+    <value>Pushes π onto the float stack.</value>
+  </data>
+  <data name="op.dup" xml:space="preserve">
+    <value>Duplicates `Stack0`.</value>
+  </data>
+  <data name="op.stackdump" xml:space="preserve">
+    <value>Writes the float stack to `logfile.txt`.</value>
+  </data>
+  <data name="op.str.concat" xml:space="preserve">
+    <value>Returns `StringStack1` followed by `StringStack0`.</value>
+  </data>
+  <data name="op.str.repeat" xml:space="preserve">
+    <value>Repeats `StringStack0` until it is `Stack0` characters long.</value>
+  </data>
+  <data name="op.str.dup" xml:space="preserve">
+    <value>Duplicates `StringStack0`.</value>
+  </data>
+  <data name="op.str.length" xml:space="preserve">
+    <value>Returns the number of characters in `StringStack0`.</value>
+  </data>
+  <data name="op.str.cutBegin" xml:space="preserve">
+    <value>Removes the first `Stack0` characters from `StringStack0`.</value>
+  </data>
+  <data name="op.str.cutEnd" xml:space="preserve">
+    <value>Removes the last `Stack0` characters from `StringStack0`.</value>
+  </data>
+  <data name="op.str.setLengthR" xml:space="preserve">
+    <value>Pads or truncates `StringStack0` to `Stack0` characters, aligned to the right.</value>
+  </data>
+  <data name="op.str.setLengthL" xml:space="preserve">
+    <value>Pads or truncates `StringStack0` to `Stack0` characters, aligned to the left.</value>
+  </data>
+  <data name="op.str.setLengthC" xml:space="preserve">
+    <value>Pads or truncates `StringStack0` to `Stack0` characters, centered.</value>
+  </data>
+  <data name="op.str.removeSpaces" xml:space="preserve">
+    <value>Removes leading and trailing whitespace and quotation marks from `StringStack0`.</value>
+  </data>
+  <data name="op.str.eq" xml:space="preserve">
+    <value>Returns 1 if `StringStack1` equals `StringStack0`; otherwise, 0.</value>
+  </data>
+  <data name="op.str.lt" xml:space="preserve">
+    <value>Returns 1 if `StringStack1` sorts before `StringStack0`; otherwise, 0.</value>
+  </data>
+  <data name="op.str.gt" xml:space="preserve">
+    <value>Returns 1 if `StringStack1` sorts after `StringStack0`; otherwise, 0.</value>
+  </data>
+  <data name="op.str.le" xml:space="preserve">
+    <value>Returns 1 if `StringStack1` sorts before or equals `StringStack0`; otherwise, 0.</value>
+  </data>
+  <data name="op.str.ge" xml:space="preserve">
+    <value>Returns 1 if `StringStack1` sorts after or equals `StringStack0`; otherwise, 0.</value>
+  </data>
+  <data name="op.str.intToStr" xml:space="preserve">
+    <value>Converts the integer part of `Stack0` to a string.</value>
+  </data>
+  <data name="op.str.intToStrEnh" xml:space="preserve">
+    <value>Converts the integer part of `Stack0` to a string in the format `StringStack0`: a fill character followed by the length, e.g. `"05"`.</value>
+  </data>
+  <data name="op.str.strToFloat" xml:space="preserve">
+    <value>Converts `StringStack0` to a number, or -1 if it is not a valid number.</value>
+  </data>
+  <data name="op.str.msg" xml:space="preserve">
+    <value>Shows `StringStack0` in the debug display.</value>
+  </data>
+  <data name="macro.GetRouteIndex" xml:space="preserve">
+    <value>Returns the index of the route with the specified number.
+
+**In:** `Stack0` route number  
+**Out:** `Stack0` route index, `or -1 if not found`</value>
+  </data>
+  <data name="macro.GetBusstopString" xml:space="preserve">
+    <value>Returns a string of a bus stop in the depot file.
+
+**In:** `Stack1` bus stop index, `Stack0` string index  
+**Out:** `StringStack0` string</value>
+  </data>
+  <data name="macro.GetTerminusString" xml:space="preserve">
+    <value>Returns a string of a terminus in the depot file.
+
+**In:** `Stack1` terminus index, `Stack0` string index  
+**Out:** `StringStack0` string</value>
+  </data>
+  <data name="macro.GetRouteTerminusIndex" xml:space="preserve">
+    <value>Returns the terminus of a route.
+
+**In:** `Stack0` route index  
+**Out:** `Stack0` terminus index, `or -1 if invalid`</value>
+  </data>
+  <data name="macro.GetTerminusIndex" xml:space="preserve">
+    <value>Returns the index of the terminus with the specified code.
+
+**In:** `Stack0` terminus code  
+**Out:** `Stack0` terminus index, `or -1 if not found`</value>
+  </data>
+  <data name="macro.GetTerminusCode" xml:space="preserve">
+    <value>Returns the code of a terminus.
+
+**In:** `Stack0` terminus index  
+**Out:** `Stack0` terminus code, `or -1 if invalid`</value>
+  </data>
+  <data name="macro.GetBusstopCount" xml:space="preserve">
+    <value>Returns the number of bus stops of a route.
+
+**In:** `Stack0` route index  
+**Out:** `Stack0` number of bus stops, `or -1 if invalid`</value>
+  </data>
+  <data name="macro.GiveChangeCoin" xml:space="preserve">
+    <value>Gives a coin of change to the passenger.
+
+**In:** `Stack0` coin index</value>
+  </data>
+  <data name="macro.GetRouteBusstopIdent" xml:space="preserve">
+    <value>Returns the identifier of a bus stop of a route.
+
+**In:** `Stack1` route index, `Stack0` stop index within the route  
+**Out:** `StringStack0` bus stop identifier</value>
+  </data>
+  <data name="macro.GetBusstopIndex" xml:space="preserve">
+    <value>Returns the index of the bus stop with the specified identifier.
+
+**In:** `StringStack0` bus stop identifier  
+**Out:** `Stack0` bus stop index, `or -1 if not found`</value>
+  </data>
+  <data name="macro.GetTTBusstopCount" xml:space="preserve">
+    <value>Returns the number of stops of the current timetable trip.
+
+**Out:** `Stack0` number of stops, `or 0 without a trip`</value>
+  </data>
+  <data name="macro.GetTTBusstopIndex" xml:space="preserve">
+    <value>Returns the index of the next stop of the current timetable trip.
+
+**Out:** `Stack0` stop index, `or -1 without a trip`</value>
+  </data>
+  <data name="macro.GetTTTerminusIndex" xml:space="preserve">
+    <value>Returns the terminus of the current timetable trip.
+
+**Out:** `Stack0` terminus index, `or -1 if unknown`</value>
+  </data>
+  <data name="macro.GetTTLineString" xml:space="preserve">
+    <value>Returns the line of the current timetable trip.
+
+**Out:** `StringStack0` line, `or an empty string without a trip`</value>
+  </data>
+  <data name="macro.GetTTDelay" xml:space="preserve">
+    <value>Returns the delay of the current timetable trip.
+
+**Out:** `Stack0` delay, `or 0 without a trip`</value>
+  </data>
+  <data name="macro.GetTTBusstopName" xml:space="preserve">
+    <value>Returns the name of a stop of the current timetable trip.
+
+**In:** `Stack0` stop index  
+**Out:** `StringStack0` stop name, `or an empty string if invalid`</value>
+  </data>
+  <data name="macro.GetTTBusstopDep" xml:space="preserve">
+    <value>Returns the departure time at a stop of the current timetable trip.
+
+**In:** `Stack0` stop index  
+**Out:** `Stack0` departure time, `or 0 if invalid`</value>
+  </data>
+  <data name="macro.GetTTBusstopArr" xml:space="preserve">
+    <value>Returns the arrival time at a stop of the current timetable trip.
+
+**In:** `Stack0` stop index  
+**Out:** `Stack0` arrival time, `or 0 if invalid`</value>
+  </data>
+  <data name="macro.GetTicketName" xml:space="preserve">
+    <value>Returns the name of a ticket.
+
+**In:** `Stack0` ticket index  
+**Out:** `StringStack0` ticket name, `or an empty string if invalid`</value>
+  </data>
+  <data name="macro.GetTicketValue" xml:space="preserve">
+    <value>Returns the price of a ticket.
+
+**In:** `Stack0` ticket index  
+**Out:** `Stack0` price, `or 0 if invalid`</value>
+  </data>
+  <data name="macro.GetHumanCountOnPathLink" xml:space="preserve">
+    <value>Returns the number of passengers on a path link.
+
+**In:** `Stack0` path link index  
+**Out:** `Stack0` number of passengers</value>
+  </data>
+  <data name="macro.NrSpecRandom" xml:space="preserve">
+    <value>Returns a pseudo-random value that depends on the vehicle number.
+
+**In:** `Stack0` selector  
+**Out:** `Stack0` value</value>
+  </data>
+  <data name="macro.GetHeightAbovePoint" xml:space="preserve">
+    <value>Returns the height of a point of the vehicle above the ground.
+
+**In:** `Stack2` x, `Stack1` y, `Stack0` z  
+**Out:** `Stack0` height</value>
+  </data>
+  <data name="macro.GetDepotStringGlobal" xml:space="preserve">
+    <value>Returns a global string of the depot file.
+
+**In:** `Stack0` string index  
+**Out:** `StringStack0` string, `or an empty string if invalid`</value>
+  </data>
+  <data name="macro.GetHumanCountOnSeat" xml:space="preserve">
+    <value>Returns the number of passengers on a seat.
+
+**In:** `Stack0` seat index  
+**Out:** `Stack0` number of passengers</value>
+  </data>
+  <data name="macro.STNewTex" xml:space="preserve">
+    <value>Creates the script texture.
+
+**In:** `Stack0` texture index</value>
+  </data>
+  <data name="macro.STLock" xml:space="preserve">
+    <value>Locks the script texture for drawing.
+
+**In:** `Stack0` texture index</value>
+  </data>
+  <data name="macro.STUnlock" xml:space="preserve">
+    <value>Unlocks the script texture.
+
+**In:** `Stack0` texture index</value>
+  </data>
+  <data name="macro.STFilter" xml:space="preserve">
+    <value>Generates the mipmaps of the script texture.
+
+**In:** `Stack0` texture index</value>
+  </data>
+  <data name="macro.STSetColor" xml:space="preserve">
+    <value>Sets the drawing color of the script texture.
+
+**In:** `Stack4` texture index, `Stack3` alpha, `Stack2` red, `Stack1` green, `Stack0` blue (0–255)</value>
+  </data>
+  <data name="macro.STDrawPixel" xml:space="preserve">
+    <value>Sets a pixel of the script texture to the drawing color.
+
+**In:** `Stack2` texture index, `Stack1` x, `Stack0` y</value>
+  </data>
+  <data name="macro.STDrawRect" xml:space="preserve">
+    <value>Fills a rectangle of the script texture with the drawing color.
+
+**In:** `Stack4` texture index, `Stack3` x1, `Stack2` y1, `Stack1` x2, `Stack0` y2</value>
+  </data>
+  <data name="macro.STTextOut" xml:space="preserve">
+    <value>Draws text on the script texture.
+
+**In:** `Stack5` texture index, `Stack4` x, `Stack3` y, `Stack2` font index, `Stack1` mode, `Stack0` character spacing, `StringStack0` text</value>
+  </data>
+  <data name="macro.GetFontIndex" xml:space="preserve">
+    <value>Returns the index of a font.
+
+**In:** `StringStack0` font name  
+**Out:** `Stack0` font index</value>
+  </data>
+  <data name="macro.TextLength" xml:space="preserve">
+    <value>Returns the width of a text in pixels.
+
+**In:** `Stack0` font index, `StringStack0` text  
+**Out:** `Stack0` width</value>
+  </data>
+  <data name="macro.STReadPixel" xml:space="preserve">
+    <value>Reads a pixel of the script texture into its drawing color.
+
+**In:** `Stack2` texture index, `Stack1` x, `Stack0` y</value>
+  </data>
+  <data name="macro.STCopyColor" xml:space="preserve">
+    <value>Copies the drawing color of a script texture to another one.
+
+**In:** `Stack1` source texture index, `Stack0` target texture index</value>
+  </data>
+  <data name="macro.STLoadTex" xml:space="preserve">
+    <value>Loads an image file into the script texture.
+
+**In:** `Stack0` texture index, `StringStack0` file name</value>
+  </data>
+  <data name="macro.STGetR" xml:space="preserve">
+    <value>Returns the red component of the drawing color.
+
+**In:** `Stack0` texture index  
+**Out:** `Stack0` red (0–255)</value>
+  </data>
+  <data name="macro.STGetG" xml:space="preserve">
+    <value>Returns the green component of the drawing color.
+
+**In:** `Stack0` texture index  
+**Out:** `Stack0` green (0–255)</value>
+  </data>
+  <data name="macro.STGetB" xml:space="preserve">
+    <value>Returns the blue component of the drawing color.
+
+**In:** `Stack0` texture index  
+**Out:** `Stack0` blue (0–255)</value>
+  </data>
+  <data name="macro.STGetA" xml:space="preserve">
+    <value>Returns the alpha component of the drawing color.
+
+**In:** `Stack0` texture index  
+**Out:** `Stack0` alpha (0–255)</value>
+  </data>
+  <data name="macro.GetArrBusLine" xml:space="preserve">
+    <value>Returns the line of an arriving bus.
+
+**In:** `Stack0` arrival index  
+**Out:** `StringStack0` line, `or an empty string if invalid`</value>
+  </data>
+  <data name="macro.GetArrBusTerminus" xml:space="preserve">
+    <value>Returns the terminus of an arriving bus.
+
+**In:** `Stack0` arrival index  
+**Out:** `StringStack0` terminus, `or an empty string if invalid`</value>
+  </data>
+  <data name="macro.GetArrBusTimeDiff" xml:space="preserve">
+    <value>Returns the time until a bus arrives.
+
+**In:** `Stack0` arrival index  
+**Out:** `Stack0` time</value>
+  </data>
+  <data name="sysvar.Timegap" xml:space="preserve">
+    <value>The interval in seconds from the last frame to the current one.</value>
+  </data>
+  <data name="sysvar.GetTime" xml:space="preserve">
+    <value>The time in seconds since OMSI was started.</value>
+  </data>
+  <data name="sysvar.NoSound" xml:space="preserve">
+    <value>1 if sound is disabled; otherwise, 0.</value>
+  </data>
+  <data name="sysvar.Pause" xml:space="preserve">
+    <value>1 if the simulation is paused; otherwise, 0.</value>
+  </data>
+  <data name="sysvar.Time" xml:space="preserve">
+    <value>The time of day in seconds since midnight.</value>
+  </data>
+  <data name="sysvar.Day" xml:space="preserve">
+    <value>The day of the month.</value>
+  </data>
+  <data name="sysvar.Month" xml:space="preserve">
+    <value>The month.</value>
+  </data>
+  <data name="sysvar.Year" xml:space="preserve">
+    <value>The year.</value>
+  </data>
+  <data name="sysvar.DayOfYear" xml:space="preserve">
+    <value>The day of the year.</value>
+  </data>
+  <data name="sysvar.mouse_x" xml:space="preserve">
+    <value>The horizontal mouse movement in pixels since the last frame.</value>
+  </data>
+  <data name="sysvar.mouse_y" xml:space="preserve">
+    <value>The vertical mouse movement in pixels since the last frame.</value>
+  </data>
+  <data name="sysvar.PrecipType" xml:space="preserve">
+    <value>The type of precipitation: 0 none, 1 rain, 2 snow.</value>
+  </data>
+  <data name="sysvar.PrecipRate" xml:space="preserve">
+    <value>The precipitation rate, from 0 (none) to 1 (maximum).</value>
+  </data>
+  <data name="sysvar.coll_pos_x" xml:space="preserve">
+    <value>The x position in meters of the last collision, relative to the vehicle.</value>
+  </data>
+  <data name="sysvar.coll_pos_y" xml:space="preserve">
+    <value>The y position in meters of the last collision, relative to the vehicle.</value>
+  </data>
+  <data name="sysvar.coll_pos_z" xml:space="preserve">
+    <value>The z position in meters of the last collision, relative to the vehicle.</value>
+  </data>
+  <data name="sysvar.coll_energy" xml:space="preserve">
+    <value>The energy of the last collision in joules.</value>
+  </data>
+  <data name="sysvar.Weather_Temperature" xml:space="preserve">
+    <value>The outside temperature in °C.</value>
+  </data>
+  <data name="sysvar.Weather_AbsHum" xml:space="preserve">
+    <value>The absolute humidity of the outside air in g/m³.</value>
+  </data>
+  <data name="sysvar.wearlifespan" xml:space="preserve">
+    <value>Not used. See the vehicle variable `wearlifespan`.</value>
+  </data>
+  <data name="sysvar.AutoClutch" xml:space="preserve">
+    <value>1 if the automatic clutch option is enabled; otherwise, 0.</value>
+  </data>
+  <data name="sysvar.SunAlt" xml:space="preserve">
+    <value>The altitude of the sun above the horizon in degrees.</value>
+  </data>
+  <data name="var.vehicle.Refresh_Strings" xml:space="preserve">
+    <value>Set to 1 to update the text textures. OMSI resets it to 0.</value>
+  </data>
+  <data name="var.vehicle.Envir_Brightness" xml:space="preserve">
+    <value>The ambient brightness around the vehicle, from 0 (dark) to 1 (bright).</value>
+  </data>
+  <data name="var.vehicle.StreetCond" xml:space="preserve">
+    <value>The wetness of the road: 0 dry, 1 wet, 2 covered by puddles.</value>
+  </data>
+  <data name="var.vehicle.Spot_Select" xml:space="preserve">
+    <value>The index of the active spotlight, or -1 for none.</value>
+  </data>
+  <data name="var.vehicle.Colorscheme" xml:space="preserve">
+    <value>The index of the active color scheme.</value>
+  </data>
+  <data name="var.vehicle.M_Wheel" xml:space="preserve">
+    <value>The total torque in kNm applied to the driven axles.</value>
+  </data>
+  <data name="var.vehicle.n_Wheel" xml:space="preserve">
+    <value>The average wheel speed in rpm.</value>
+  </data>
+  <data name="var.vehicle.Throttle" xml:space="preserve">
+    <value>The throttle pedal position, from 0 to 1.</value>
+  </data>
+  <data name="var.vehicle.Brake" xml:space="preserve">
+    <value>The brake pedal position, from 0 to 1.</value>
+  </data>
+  <data name="var.vehicle.Clutch" xml:space="preserve">
+    <value>The clutch pedal position, from 0 to 1.</value>
+  </data>
+  <data name="var.vehicle.Brakeforce" xml:space="preserve">
+    <value>The total brake force in N applied to the wheels.</value>
+  </data>
+  <data name="var.vehicle.Velocity" xml:space="preserve">
+    <value>The speed in km/h, derived from the wheel rotation.</value>
+  </data>
+  <data name="var.vehicle.Velocity_Ground" xml:space="preserve">
+    <value>The speed in km/h relative to the ground.</value>
+  </data>
+  <data name="var.vehicle.tank_percent" xml:space="preserve">
+    <value>The fuel level shown in the info bar, from 0 to 1.</value>
+  </data>
+  <data name="var.vehicle.kmcounter_km" xml:space="preserve">
+    <value>The odometer reading in whole kilometers.</value>
+  </data>
+  <data name="var.vehicle.kmcounter_m" xml:space="preserve">
+    <value>The meters of the odometer reading, from 0 to 999.</value>
+  </data>
+  <data name="var.vehicle.relrange" xml:space="preserve">
+    <value>Reserved. Do not use.</value>
+  </data>
+  <data name="var.vehicle.Driver_Seat_VertTransl" xml:space="preserve">
+    <value>The vertical deflection of the driver seat in meters.</value>
+  </data>
+  <data name="var.vehicle.Debug_#" xml:space="preserve">
+    <value>A value shown in the debug display.</value>
+  </data>
+  <data name="var.vehicle.A_Trans_X" xml:space="preserve">
+    <value>The acceleration along the x axis in m/s².</value>
+  </data>
+  <data name="var.vehicle.A_Trans_Y" xml:space="preserve">
+    <value>The acceleration along the y axis in m/s².</value>
+  </data>
+  <data name="var.vehicle.A_Trans_Z" xml:space="preserve">
+    <value>The acceleration along the z axis in m/s².</value>
+  </data>
+  <data name="var.vehicle.AI_Blinker_L" xml:space="preserve">
+    <value>The state of the left turn signal: 1 on, 0 off. Set by the script for player vehicles and by OMSI for AI vehicles.</value>
+  </data>
+  <data name="var.vehicle.AI_Blinker_R" xml:space="preserve">
+    <value>The state of the right turn signal: 1 on, 0 off. Set by the script for player vehicles and by OMSI for AI vehicles.</value>
+  </data>
+  <data name="var.vehicle.AI_Light" xml:space="preserve">
+    <value>The state of the headlights: 0 off, 0.5 parking lights, 1 low beam, 2 high beam. Set by the script for player vehicles and by OMSI for AI vehicles.</value>
+  </data>
+  <data name="var.vehicle.AI_Interiorlight" xml:space="preserve">
+    <value>The state of the interior lighting: 1 on, 0 off. Set by the script for player vehicles and by OMSI for AI vehicles.</value>
+  </data>
+  <data name="var.vehicle.AI_Brakelight" xml:space="preserve">
+    <value>1 if the AI requests the brake lights; otherwise, 0.</value>
+  </data>
+  <data name="var.vehicle.AI_Engine" xml:space="preserve">
+    <value>The engine state requested by the AI: -1 off, 0 no request, 1 on.</value>
+  </data>
+  <data name="var.vehicle.AI_target_index" xml:space="preserve">
+    <value>The index of the requested destination in the depot file.</value>
+  </data>
+  <data name="var.vehicle.target_index_int" xml:space="preserve">
+    <value>The index of the displayed destination in the depot file.</value>
+  </data>
+  <data name="var.vehicle.AI_Scheduled_AtStation" xml:space="preserve">
+    <value>The stop state of a scheduled AI vehicle: 1 open the doors, -1 prepare to depart. Set to 0 when the vehicle is ready to depart.</value>
+  </data>
+  <data name="var.vehicle.AI_Scheduled_AtStation_Side" xml:space="preserve">
+    <value>The side of the doors to open: 0 right, 1 left, 2 both. Available when declared in a varlist.</value>
+  </data>
+  <data name="var.vehicle.AI" xml:space="preserve">
+    <value>1 if the vehicle is controlled by the AI; otherwise, 0.</value>
+  </data>
+  <data name="var.vehicle.PAX_Entry#_Open" xml:space="preserve">
+    <value>Set to 1 if entrance # is open; otherwise, 0.</value>
+  </data>
+  <data name="var.vehicle.PAX_Exit#_Open" xml:space="preserve">
+    <value>Set to 1 if exit # is open; otherwise, 0.</value>
+  </data>
+  <data name="var.vehicle.PAX_Entry#_Req" xml:space="preserve">
+    <value>1 if a passenger requests to enter through entrance #; otherwise, 0.</value>
+  </data>
+  <data name="var.vehicle.PAX_Exit#_Req" xml:space="preserve">
+    <value>1 if a passenger requests to leave through exit #; otherwise, 0.</value>
+  </data>
+  <data name="var.vehicle.GivenTicket" xml:space="preserve">
+    <value>Set to the index of the issued ticket, or -1 for none.</value>
+  </data>
+  <data name="var.vehicle.humans_count" xml:space="preserve">
+    <value>The number of passengers in the vehicle.</value>
+  </data>
+  <data name="var.vehicle.FF_Vib_Period" xml:space="preserve">
+    <value>The period of the force feedback vibration in seconds.</value>
+  </data>
+  <data name="var.vehicle.FF_Vib_Amp" xml:space="preserve">
+    <value>The amplitude of the force feedback vibration, from 0 to 1.</value>
+  </data>
+  <data name="var.vehicle.Snd_OutsideVol" xml:space="preserve">
+    <value>The volume of outside sounds inside the vehicle, from 0 (inaudible) to 1 (as outside).</value>
+  </data>
+  <data name="var.vehicle.Snd_Microphone" xml:space="preserve">
+    <value>Set to 1 to enable the microphone.</value>
+  </data>
+  <data name="var.vehicle.Snd_Radio" xml:space="preserve">
+    <value>Set to 1 to play the internet radio.</value>
+  </data>
+  <data name="var.vehicle.Cabinair_Temp" xml:space="preserve">
+    <value>The cabin air temperature in °C.</value>
+  </data>
+  <data name="var.vehicle.Cabinair_relHum" xml:space="preserve">
+    <value>The relative humidity of the cabin air, from 0 to 1.</value>
+  </data>
+  <data name="var.vehicle.Cabinair_absHum" xml:space="preserve">
+    <value>The absolute humidity of the cabin air in g/m³.</value>
+  </data>
+  <data name="var.vehicle.PrecipRate" xml:space="preserve">
+    <value>The precipitation rate, from 0 (none) to 1 (maximum).</value>
+  </data>
+  <data name="var.vehicle.PrecipType" xml:space="preserve">
+    <value>The type of precipitation: 0 none, 1 rain, 2 snow.</value>
+  </data>
+  <data name="var.vehicle.DirtRate" xml:space="preserve">
+    <value>The rate per second at which the vehicle gets dirty.</value>
+  </data>
+  <data name="var.vehicle.Dirt_Norm" xml:space="preserve">
+    <value>The dirtiness of the vehicle, from 0 (clean) to 1 (dirty).</value>
+  </data>
+  <data name="var.vehicle.schedule_active" xml:space="preserve">
+    <value>1 if a timetable is active; otherwise, 0.</value>
+  </data>
+  <data name="var.vehicle.train_frontcoupling" xml:space="preserve">
+    <value>1 if a vehicle is coupled to the front coupling; otherwise, 0.</value>
+  </data>
+  <data name="var.vehicle.train_backcoupling" xml:space="preserve">
+    <value>1 if a vehicle is coupled to the rear coupling; otherwise, 0.</value>
+  </data>
+  <data name="var.vehicle.train_me_reverse" xml:space="preserve">
+    <value>1 if the vehicle is reversed within its train; otherwise, 0.</value>
+  </data>
+  <data name="var.vehicle.TrafficPriority" xml:space="preserve">
+    <value>Set to 1 to give the vehicle priority over other traffic.</value>
+  </data>
+  <data name="var.vehicle.wearlifespan" xml:space="preserve">
+    <value>The lifespan factor of wear parts from the maintenance option: 10 very good, 1 normal, 0.1 poor, 0.01 very poor.</value>
+  </data>
+  <data name="var.vehicle.articulation_#_alpha" xml:space="preserve">
+    <value>The horizontal angle of articulation joint # in degrees. Available when declared in a varlist.</value>
+  </data>
+  <data name="var.vehicle.articulation_#_beta" xml:space="preserve">
+    <value>The vertical angle of articulation joint # in degrees. Available when declared in a varlist.</value>
+  </data>
+  <data name="var.vehicle.boogie_#_wheel_at_limit" xml:space="preserve">
+    <value>The lateral position of the wheels of bogie # between the flanges, from -1 to 1. Available when declared in a varlist.</value>
+  </data>
+  <data name="var.vehicle.boogie_#_invradius" xml:space="preserve">
+    <value>The inverse curve radius at bogie # in 1/m. Available when declared in a varlist.</value>
+  </data>
+  <data name="var.vehicle.contactshoe_#_rail_pos_x" xml:space="preserve">
+    <value>The lateral position of the conductor rail at contact shoe # in meters. Available when declared in a varlist.</value>
+  </data>
+  <data name="var.vehicle.contactshoe_#_rail_pos_z" xml:space="preserve">
+    <value>The vertical position of the conductor rail at contact shoe # in meters. Available when declared in a varlist.</value>
+  </data>
+  <data name="var.vehicle.contactshoe_#_rail_index" xml:space="preserve">
+    <value>The index of the conductor rail at contact shoe #, or -1 for none. Available when declared in a varlist.</value>
+  </data>
+  <data name="var.vehicle.contactshoe_#_volt_rail" xml:space="preserve">
+    <value>The voltage of the conductor rail at contact shoe # in V. Available when declared in a varlist.</value>
+  </data>
+  <data name="var.vehicle.contactshoe_#_volt_veh" xml:space="preserve">
+    <value>The voltage transferred to the vehicle by contact shoe # in V. Available when declared in a varlist.</value>
+  </data>
+  <data name="var.vehicle.contactshoe_#_freq" xml:space="preserve">
+    <value>The frequency of the conductor rail voltage at contact shoe # in Hz, or 0 for direct current. Available when declared in a varlist.</value>
+  </data>
+  <data name="var.vehicle.Wheel_Rotation_#_L" xml:space="preserve">
+    <value>The rotation angle of the left wheel of axle # in radians.</value>
+  </data>
+  <data name="var.vehicle.Wheel_Rotation_#_R" xml:space="preserve">
+    <value>The rotation angle of the right wheel of axle # in radians.</value>
+  </data>
+  <data name="var.vehicle.Wheel_RotationSpeed_#_L" xml:space="preserve">
+    <value>The rotation speed of the left wheel of axle # in rpm.</value>
+  </data>
+  <data name="var.vehicle.Wheel_RotationSpeed_#_R" xml:space="preserve">
+    <value>The rotation speed of the right wheel of axle # in rpm.</value>
+  </data>
+  <data name="var.vehicle.Axle_Suspension_#_L" xml:space="preserve">
+    <value>The suspension deflection of the left wheel of axle # in meters.</value>
+  </data>
+  <data name="var.vehicle.Axle_Suspension_#_R" xml:space="preserve">
+    <value>The suspension deflection of the right wheel of axle # in meters.</value>
+  </data>
+  <data name="var.vehicle.Axle_Steering_#_L" xml:space="preserve">
+    <value>The steering angle of the left wheel of axle # in radians.</value>
+  </data>
+  <data name="var.vehicle.Axle_Steering_#_R" xml:space="preserve">
+    <value>The steering angle of the right wheel of axle # in radians.</value>
+  </data>
+  <data name="var.vehicle.Axle_Springfactor_#_L" xml:space="preserve">
+    <value>The spring rate factor of the left wheel of axle #. 1 is the normal spring rate.</value>
+  </data>
+  <data name="var.vehicle.Axle_Springfactor_#_R" xml:space="preserve">
+    <value>The spring rate factor of the right wheel of axle #. 1 is the normal spring rate.</value>
+  </data>
+  <data name="var.vehicle.Axle_Brakeforce_#_L" xml:space="preserve">
+    <value>The brake force applied to the left wheel of axle # in N.</value>
+  </data>
+  <data name="var.vehicle.Axle_Brakeforce_#_R" xml:space="preserve">
+    <value>The brake force applied to the right wheel of axle # in N.</value>
+  </data>
+  <data name="var.vehicle.Axle_SurfaceID_#_L" xml:space="preserve">
+    <value>The surface type under the left wheel of axle #. Available when declared in a varlist.</value>
+  </data>
+  <data name="var.vehicle.Axle_SurfaceID_#_R" xml:space="preserve">
+    <value>The surface type under the right wheel of axle #. Available when declared in a varlist.</value>
+  </data>
+  <data name="var.string.ident" xml:space="preserve">
+    <value>The registration number of the vehicle.</value>
+  </data>
+  <data name="var.string.number" xml:space="preserve">
+    <value>The vehicle number.</value>
+  </data>
+  <data name="var.string.act_route" xml:space="preserve">
+    <value>Not used.</value>
+  </data>
+  <data name="var.string.act_busstop" xml:space="preserve">
+    <value>The name of the current bus stop of a scheduled vehicle.</value>
+  </data>
+  <data name="var.string.SetLineTo" xml:space="preserve">
+    <value>The line to display, set before `ai_scheduled_settarget` runs.</value>
+  </data>
+  <data name="var.string.yard" xml:space="preserve">
+    <value>The name of the depot file of the vehicle.</value>
+  </data>
+  <data name="var.string.file_schedule" xml:space="preserve">
+    <value>The file name of the timetable bitmap.</value>
+  </data>
+  <data name="var.scenery.NightlightA" xml:space="preserve">
+    <value>1 if the night lighting is on; otherwise, 0.</value>
+  </data>
+  <data name="var.scenery.InUse" xml:space="preserve">
+    <value>1 if the object is in use; otherwise, 0.</value>
+  </data>
+  <data name="var.scenery.TrafficLightPhase" xml:space="preserve">
+    <value>The traffic light phase: 0–2 red, 3–5 red-amber, 6–8 green, 9–11 amber, otherwise off.</value>
+  </data>
+  <data name="var.scenery.TrafficLightApproach" xml:space="preserve">
+    <value>1 if a vehicle requests the traffic light; otherwise, 0.</value>
+  </data>
+  <data name="var.scenery.Colorscheme" xml:space="preserve">
+    <value>Obsolete.</value>
+  </data>
+  <data name="var.scenery.Signal" xml:space="preserve">
+    <value>The aspect of the signal.</value>
+  </data>
+  <data name="var.scenery.NextSignal" xml:space="preserve">
+    <value>The aspect of the next signal.</value>
+  </data>
+  <data name="var.scenery.Refresh_Strings" xml:space="preserve">
+    <value>Set to 1 to update the text textures. OMSI resets it to 0.</value>
+  </data>
+  <data name="var.scenery.Switch" xml:space="preserve">
+    <value>Set to the `[switchdir]` value of the path the switch is set to.</value>
+  </data>
+  <data name="var.human.LastMovedDist" xml:space="preserve">
+    <value>The distance in meters the human moved since the last frame.</value>
+  </data>
+  <data name="var.human.PAX_State" xml:space="preserve">
+    <value>The state of the human: 0 standing, 1 walking, 2 sitting.</value>
+  </data>
+  <data name="var.human.HeightOfSeat" xml:space="preserve">
+    <value>The height of the seat in meters.</value>
+  </data>
+  <data name="var.human.Colorscheme" xml:space="preserve">
+    <value>The index of the active color scheme.</value>
+  </data>
+</root>

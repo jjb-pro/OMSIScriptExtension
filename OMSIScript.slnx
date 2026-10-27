@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/documentation/">
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/scripts/">
+    <File Path="scripts/build.ps1" />
+    <File Path="scripts/release.ps1" />
+  </Folder>
+  <Project Path="src/OMSIScript.Core/OMSIScript.Core.csproj" />
+  <Project Path="src/OMSIScript.LanguageServer/OMSIScript.LanguageServer.csproj" />
+  <Project Path="tests/OMSIScript.Core.Tests/OMSIScript.Core.Tests.csproj" />
+</Solution>

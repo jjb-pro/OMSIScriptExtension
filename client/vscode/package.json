@@ -1,0 +1,155 @@
+{
+    "name": "osc-ext",
+    "displayName": "OMSI Script",
+    "description": "Language support for OMSI scripts (.osc) with completion, documentation, navigation, refactoring and formatting.",
+    "version": "2.0.0",
+    "publisher": "jjb-pro",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "icon": "images/icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jjb-pro/OMSIScriptExtension.git"
+    },
+    "engines": {
+        "vscode": "^1.90.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Linters",
+        "Formatters"
+    ],
+    "keywords": [
+        "omsi",
+        "omsi 2",
+        "osc",
+        "script",
+        "bus simulator"
+    ],
+    "main": "./dist/extension.js",
+    "activationEvents": [
+        "workspaceContains:**/*.osc"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "osc",
+                "aliases": [
+                    "OMSI Script",
+                    "osc"
+                ],
+                "extensions": [
+                    ".osc"
+                ],
+                "configuration": "./language-configuration.json",
+                "icon": {
+                    "light": "./images/icon.png",
+                    "dark": "./images/icon.png"
+                }
+            }
+        ],
+        "grammars": [
+            {
+                "language": "osc",
+                "scopeName": "source.osc",
+                "path": "./syntaxes/osc.tmLanguage.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "omsiScript.restartServer",
+                "title": "Restart Language Server",
+                "category": "OMSI Script"
+            },
+            {
+                "command": "omsiScript.showScriptContext",
+                "title": "Show Objects Using This Script",
+                "category": "OMSI Script",
+                "enablement": "editorLangId == osc"
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "omsiScript.showScriptContext",
+                    "when": "editorLangId == osc"
+                }
+            ]
+        },
+        "configuration": {
+            "title": "OMSI Script",
+            "properties": {
+                "omsiScript.gamePath": {
+                    "type": "string",
+                    "default": "",
+                    "markdownDescription": "Path of the OMSI 2 installation (the folder that contains `Omsi.exe`).",
+                    "scope": "machine-overridable"
+                },
+                "omsiScript.diagnostics.severity": {
+                    "type": "object",
+                    "default": {},
+                    "markdownDescription": "Overrides the severity of diagnostics.",
+                    "additionalProperties": {
+                        "type": "string",
+                        "enum": [
+                            "error",
+                            "warning",
+                            "information",
+                            "hint",
+                            "none"
+                        ]
+                    }
+                },
+                "omsiScript.inlayHints.constants": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show the values of constants next to (C.L.…) commands."
+                },
+                "omsiScript.server.path": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Path of a custom language server executable.",
+                    "scope": "machine-overridable"
+                },
+                "omsiScript.trace.server": {
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "messages",
+                        "verbose"
+                    ],
+                    "default": "off",
+                    "description": "Traces the communication between VS Code and the language server.",
+                    "scope": "window"
+                }
+            }
+        },
+        "configurationDefaults": {
+            "[osc]": {
+                "files.encoding": "windows1252",
+                "editor.insertSpaces": false,
+                "editor.detectIndentation": false,
+                "editor.wordBasedSuggestions": "off"
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run build",
+        "build": "npm run typecheck && node esbuild.mjs --production",
+        "watch": "node esbuild.mjs --watch",
+        "typecheck": "tsc --noEmit",
+        "lint": "tsc --noEmit",
+        "test": "node esbuild.mjs && node test/runTest.cjs",
+        "package": "vsce package"
+    },
+    "dependencies": {
+        "vscode-languageclient": "^9.0.1"
+    },
+    "devDependencies": {
+        "@types/node": "^20.17.0",
+        "@types/vscode": "~1.90.0",
+        "@vscode/test-electron": "^2.4.1",
+        "@vscode/vsce": "^3.2.1",
+        "esbuild": "^0.24.0",
+        "typescript": "^5.6.3"
+    }
+}

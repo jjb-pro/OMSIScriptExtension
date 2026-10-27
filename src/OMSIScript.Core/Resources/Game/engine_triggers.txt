@@ -1,0 +1,8 @@
+ai_scheduled_settarget
+ai_scheduled_setbusstop
+collision
+int_haltewunsch
+malfunction_gettime
+malfunction_reset
+railbond_#
+veh_tank

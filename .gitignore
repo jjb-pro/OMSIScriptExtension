@@ -1,0 +1,12 @@
+bin/
+obj/
+artifacts/
+.vs/
+*.user
+TestResults/
+
+client/vscode/node_modules/
+client/vscode/dist/
+client/vscode/server/
+client/vscode/.vscode-test/
+*.vsix
